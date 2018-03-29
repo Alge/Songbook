@@ -1,3 +1,7 @@
+.idea/
+
+env/
+
 # Built application files
 *.apk
 *.ap_
