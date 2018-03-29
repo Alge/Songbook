@@ -9,7 +9,7 @@ class Writer(models.Model):
 
 class Song(models.Model):
     name            = models.CharField(max_length=100)
-    description     = models.CharField(max_length=500)
+    description     = models.CharField(max_length=500, null=True, blank=True)
     composer        = models.ForeignKey(Writer, null=True, blank=True, on_delete=models.SET_NULL, related_name="composer")
     arranger        = models.ForeignKey(Writer, null=True, blank=True, on_delete=models.SET_NULL, related_name="arranger")
     original_text   = models.ForeignKey(Writer, null=True, blank=True, on_delete=models.SET_NULL, related_name="original_text")
