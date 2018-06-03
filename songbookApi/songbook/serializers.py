@@ -18,25 +18,24 @@ class CategorySerializer(serializers.HyperlinkedModelSerializer):
         model = Category
         fields = ('url', 'name', 'description')
 
-class VerseSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Verse
-        fields = ('url', 'name', 'text', 'description', 'text', 'sorting_weight', 'song')
-
 class SongSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Song
-        fields = ('url', 'name', 'description', 'composer', 'arranger', 'original_text', 'new_text', 'added_by', 'category', 'verses')
-
+        fields = ('url', 'name', 'description', 'composer', 'author', 'added_by', 'category', 'text', "melody")
 
 
 class WriterSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Writer
-        fields = ('name', 'description')
+        fields = ('url', 'name', 'description')
 
 class MelodySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Melody
-        fields = ('name', 'description', 'link')
+        fields = ('url', 'name', 'description', 'link')
+
+class CollectionSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Collection
+        fields = ('url', 'name', 'description')

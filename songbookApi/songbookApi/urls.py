@@ -25,14 +25,17 @@ router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
 router.register(r'songs', views.SongViewSet)
-router.register(r'verses', views.VerseViewSet)
 router.register(r'writers', views.WriterViewSet)
 router.register(r'categories', views.CategoryViewSet)
 router.register(r'melodies', views.MelodyViewSet)
+router.register(r'collections', views.CollectionViewSet)
+
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^api/', include(router.urls)),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^add-song/', views.add_song)
+
 ]

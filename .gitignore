@@ -1,3 +1,13 @@
+Pipfile.lock
+
+songbookApi/db.sqlite3
+
+songbookApi/songbook/__pycache__/
+
+not_tracked/
+
+songbookApi/songs_backup/
+
 .idea/
 
 env/
